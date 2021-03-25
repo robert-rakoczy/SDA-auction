@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <li class="nav-item">
+        <a class="nav-link" href="/website/watchlist/">Watchlist</a>
+    </li>
+    <li class="nav-item open-modal">
+        <a class="nav-link" href="/website/balance/">Balance : €{{ balance }}</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/website/logout/">Logout</a>
+    </li>
+
+    <div class="container">
+        <div class="row">
+            {% for item in items %}
+                {% if forloop.counter0|divisibleby:3 and not forloop.first %}<div class="w-100"></div>{% endif %}
+                <div class="col">
+                    <h4>{{item.title}}</h4>
+                    <img src="{{ item.photos }}" height="150" width="150" />
+                    <p>{{ item.buy_now }}</p>
+                    <P>{{ item.min_to_pay }}</P>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock content %}

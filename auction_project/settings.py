@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'auction_webapp',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'Mk8!qSd4&2vJ',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         'OPTIONS': {
@@ -127,3 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Media files - uploaded by user
+
+MEDIA_URL = '/media/'

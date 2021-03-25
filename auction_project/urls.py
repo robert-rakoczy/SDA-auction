@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from auction import views
-
+from django.conf import settings
+from django.conf.urls.static import static
+#from auction.views import ItemListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',views.loginpage,name='login'),
     path('registration/',views.registerpage, name = 'register'),
-    path('',views.home, name="home"),
-    path('products',views.products, name='products')
-]
+    #path('',views.home, name="home"),
+    path('products',views.products, name='products'),
+    path('', views.ItemListView.as_view())
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

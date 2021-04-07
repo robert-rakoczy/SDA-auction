@@ -84,6 +84,9 @@
           <a href="#" class="btn btn-primary my-2">Latest</a>
           <a href="#" class="btn btn-secondary my-2">Buy now only</a>
           <a href="#" class="btn btn-secondary my-2">Search</a>
+          <form method="GET" action="" id="searchform">
+            <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+        </form>
         </p>
       </div>
     </div>

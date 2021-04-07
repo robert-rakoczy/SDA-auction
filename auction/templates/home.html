@@ -15,7 +15,7 @@
             {% for item in items %}
                 {% if forloop.counter0|divisibleby:3 and not forloop.first %}<div class="w-100"></div>{% endif %}
                 <div class="col">
-                    <h4>{{item.title}}</h4>
+                    <h4><a href="{% url 'item_details' item.id %}">{{item.title}} </a></h4>
                     <img src="{{ item.photos }}" height="150" width="150" />
                     <p>{{ item.buy_now }}</p>
                     <P>{{ item.min_to_pay }}</P>

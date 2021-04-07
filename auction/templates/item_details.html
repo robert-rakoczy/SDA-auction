@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<p>Name: {{ item.title }}</p>
+<img src="{{ item.photos }}" alt="{{ item.title }}">
+<p>Buy now price: {{ item.buy_now }}</p>
+<p>Description: {{ item.description }}</p>
+<p>Bid price: {{ item.min_to_pay }}</p>
+<p>End date: {{item.auction_end_date }}</p>
+<p>Number of visits: {{ item.no_of_visits }}</p>
+
+
+<hr>
+
+<p><a href="{% url 'item_update' item.id %}"  class="btn btn-primary">Update this item</a></p>
+<p><a href="{% url 'item_delete' item.id %}"  class="btn btn-danger">Delete this item</a></p>
+<p><a href="{% url 'items' %}"  class="btn btn-primary">Items list</a></p>
+
+
+{% endblock %}

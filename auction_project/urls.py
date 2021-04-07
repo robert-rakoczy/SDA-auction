@@ -24,7 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',views.loginpage,name='login'),
     path('registration/',views.registerpage, name = 'register'),
-    #path('',views.home, name="home"),
-    path('products',views.products, name='products'),
-    path('', views.ItemListView.as_view())
+    path('items/', views.ItemListView.as_view(), name='items'),
+    path('items/add_item', views.ItemCreateView.as_view(), name='item_add'),
+    path('items/<int:pk>/details', views.ItemDetailView.as_view(), name='item_details'),
+    path('items/<int:pk>/delete', views.ItemDeleteView.as_view(), name='item_delete'),
+    path('items<int:pk>/update', views.ItemUpdateView.as_view(), name='item_update')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
